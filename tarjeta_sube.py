@@ -48,15 +48,15 @@ class Sube:
                 raise UsuarioDesactivadoException()
             elif self.saldo >= self.obtener_precio_ticket():
                 if self.grupo_beneficiario == None:
-                    self.saldo = self.saldo - PRECIO_TICKET
+                    self.saldo -= PRECIO_TICKET
                 elif self.grupo_beneficiario == PRIMARIO:
-                    self.saldo = self.saldo - DESCUENTOS[PRIMARIO]
+                    self.saldo -= DESCUENTOS[PRIMARIO]
                 elif self.grupo_beneficiario == SECUNDARIO:
-                    self.saldo = self.saldo - DESCUENTOS[SECUNDARIO]
+                    self.saldo -= DESCUENTOS[SECUNDARIO]
                 elif self.grupo_beneficiario == UNIVERSITARIO:
-                    self.saldo = self.saldo - DESCUENTOS[UNIVERSITARIO]
+                    self.saldo -= DESCUENTOS[UNIVERSITARIO]
                 elif self.grupo_beneficiario == JUBILADO:
-                    self.saldo = self.saldo - DESCUENTOS[JUBILADO]
+                    self.saldo -= DESCUENTOS[JUBILADO]
             else: 
                 raise NoHaySaldoException()
 
